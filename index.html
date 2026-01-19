@@ -1,7 +1,9 @@
+ 
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
   <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>ALMAHS Platform</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="style.css">
@@ -10,9 +12,8 @@
 
 <header class="topbar">
   <div class="logo">A L M A H S</div>
-  <button class="menu-btn">☰</button>
   <div class="top-icons">
-    🔔 👤
+    🔔     👤
   </div>
 </header>
 
@@ -21,48 +22,115 @@
   <!-- المحتوى -->
   <main class="content">
 
-    <div class="cards">
-      <div class="card">0<br><span>الفيديوهات المحفوظة</span></div>
-      <div class="card">0<br><span>كورساتك الحالية</span></div>
-      <div class="card">0<br><span>كورسات مكتملة</span></div>
-    </div>
-
-    <div class="bottom">
-      <div class="progress-card">
-        <h3>تقدمك</h3>
-        <p>0%</p>
-        <div class="progress">
-          <div class="progress-bar"></div>
-        </div>
+    <!-- الصفحة الرئيسية -->
+    <div id="dashboard">
+      <div class="cards">
+        <div class="card">0<br><span>الفيديوهات المحفوظة</span></div>
+        <div class="card">0<br><span>كورساتك الحالية</span></div>
+        <div class="card">0<br><span>كورسات مكتملة</span></div>
       </div>
 
-      <div class="activity-card">
-        <h3>نشاطك التعليمي</h3>
-        <div class="graph">Graph Placeholder</div>
+      <div class="bottom">
+        <div class="progress-card">
+          <h3>تقدمك</h3>
+          <p>0%</p>
+          <div class="progress">
+            <div class="progress-bar"></div>
+          </div>
+        </div>
+<h3><div class="box">
+  أهلاً بيك في المنصة 👋  
+  <br><br>
+  جاهز تبدأ أول كورس؟
+  <br><br>
+  <a href="courses.html" class="start-btn">ابدأ الآن</a>
+</div></h3>
+<div class="activity-card activity-box">
+
+  <div class="activity-item">
+    <span>📘 آخر كورس</span>
+    <strong>لم تبدا بعد</strong>
+  </div>
+
+  <div class="activity-item">
+    <span>🎬 آخر فيديو</span>
+    <strong>لم تبدا بعد</strong>
+  </div>
+
+  <button class="continue-btn">
+    كمل اخر فيديو →
+  </button>
+
+</div>
+      </div>
+    </div>
+
+    <!-- صفحة الكورسات -->
+    <div id="courses" style="display:none">
+      <h2>📚 كورساتك</h2>
+
+      <div class="card">
+        <h3>كورس HTML</h3>
+        <p>تعلم أساسيات HTML من الصفر</p>
+      </div>
+
+      <div class="card">
+        <h3>كورس CSS</h3>
+        <p>تنسيق المواقع باحتراف</p>
       </div>
     </div>
 
   </main>
 
   <!-- السايد بار -->
-<aside class="sidebar hide-sidebar">
+  <aside class="sidebar">
     <ul>
-      <li class="active">🏠 الرئيسية</li>
-      <li>📚 الكورسات</li>
-      <li>👥 المنتدى</li>
-      <li>⚙️ حسابي</li>
+      <li class="nav-item active" onclick="showDashboard(this)">🏠 الرئيسية</li>
+<a href="courses.html">الكورسات</a>
+      <li class="nav-item">👥 الدعم</li>
+      <li class="nav-item">⚙️ حسابي</li>
     </ul>
   </aside>
 
 </div>
+
 <script>
   const menuBtn = document.querySelector('.menu-btn');
   const sidebar = document.querySelector('.sidebar');
 
+  const dashboard = document.getElementById('dashboard');
+  const courses = document.getElementById('courses');
+  const navItems = document.querySelectorAll('.nav-item');
+
   menuBtn.onclick = function () {
     sidebar.classList.toggle('show');
   }
+
+  function setActive(el) {
+    navItems.forEach(item => item.classList.remove('active'));
+    el.classList.add('active');
+  }
+
+  function showDashboard(el) {
+    dashboard.style.display = "block";
+    courses.style.display = "none";
+    setActive(el);
+  }
+
+  function showCourses(el) {
+    dashboard.style.display = "none";
+    courses.style.display = "block";
+    setActive(el);
+  }
+</script>
+<script>
+function showCourses() {
+  document.getElementById("coursesPlace").innerHTML = `
+    <div class="course">كورس HTML</div>
+    <div class="course">كورس CSS</div>
+    <div class="course">كورس JavaScript</div>
+  `;
+}
 </script>
 </body>
 </html>
-
