@@ -109,4 +109,13 @@ video {
   display: block;
   margin: 20px auto;
   border-radius: 15px;
+
+}
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+section, .card, .course {
+  width: 100%;
 }
