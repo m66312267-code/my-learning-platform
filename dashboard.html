@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+  <meta charset="UTF-8">
+  <title>Dashboard</title>
+
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f4f6f8;
+    }
+
+    h1 {
+      text-align: center;
+      padding: 20px;
+      background: #1e88e5;
+      color: white;
+      margin: 0;
+    }
+
+    .courses {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      padding: 20px;
+    }
+
+    .card {
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      padding: 15px;
+      text-align: center;
+    }
+
+    .card img {
+      width: 100%;
+      border-radius: 8px;
+    }
+
+    .card h3 {
+      margin: 10px 0;
+    }
+
+    .card button {
+      background: #1e88e5;
+      color: white;
+      border: none;
+      padding: 10px 15px;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- عنوان الصفحة -->
+  <h1>الكورسات المتاحة</h1>
+
+  <!-- هنا الكروت -->
+  <div class="courses">
+
+    <!-- كارت HTML -->
+    <div class="card">
+      <img src="images/js.png">
+      <h3>كورس HTML</h3>
+      <a href="html-course.html" target="_blank">
+        <button>ابدأ الكورس</button>
+      </a>
+    </div>
+
+    <!-- كارت CSS -->
+    <div class="card">
+      <img src="images/js.png">
+      <h3>كورس CSS</h3>
+      <button>قريبًا</button>
+    </div>
+
+    <!-- كارت JavaScript -->
+    <div class="card">
+      <img src="images/js.png">
+      <h3>كورس JavaScript</h3>
+      <button>قريبًا</button>
+    </div>
+
+  </div>
+
+</body>
+</html>
