@@ -124,4 +124,49 @@ body {
 }
 
 /* ===== MOBILE ===== */
-@media (max-wid
+@media (max-width: 768px) {
+
+  body {
+    background: #f8fafc;
+    color: #020617;
+  }
+
+  .menu-btn {
+    display: block;
+  }
+
+  .container {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    position: fixed;
+    top: 0;
+    right: -260px;
+    width: 240px;
+    height: 100%;
+    z-index: 1000;
+    transition: right 0.3s ease;
+  }
+
+  .sidebar.show {
+    right: 0;
+  }
+
+  .cards {
+    grid-template-columns: 1fr;
+  }
+
+  .bottom {
+    grid-template-columns: 1fr;
+  }
+
+  .card,
+  .progress-card,
+  .activity-card {
+    background: #ffffff;
+    color: #020617;
+    box-shadow: 0 8px 20px rgba(0,0,0,.08);
+  }
+
+}
