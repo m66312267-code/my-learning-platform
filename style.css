@@ -200,3 +200,31 @@ body {
   }
 
 }
+/* ===== Mobile Sidebar Fix ===== */
+@media (max-width: 768px) {
+
+  .sidebar {
+    position: fixed;
+    top: 0;
+    right: -260px;   /* 👈 مخفية */
+    width: 240px;
+    height: 100%;
+    background: #020617;
+    transition: 0.3s ease;
+    z-index: 1000;
+  }
+
+  .sidebar.show {
+    right: 0;        /* 👈 تظهر */
+  }
+
+  .menu-btn {
+    z-index: 1100;
+    font-size: 26px;
+    background: none;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+  }
+
+}
